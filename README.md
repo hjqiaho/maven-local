@@ -16,7 +16,7 @@ repositories {
 
 引入   
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.4'
+implementation 'com.fundot.local:fundotlauncher:1.0.5'
 ```
 
 初始化 在Application 的onCreate方法中

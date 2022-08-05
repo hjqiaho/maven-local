@@ -16,21 +16,26 @@ repositories {
 
 引入   
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.5'
+implementation 'com.fundot.local:fundotlauncher:1.0.6'
 ```
+
 
 初始化 在Application 的onCreate方法中
 
 ```
-FundotOpenInfoHelper.register(this, object : FundotOpenInfoHelper.FunDotInfoCallback{
-        override fun fundotInfoChange(fundotOpenModel: FundotOpenModel) {
-            //用户信息变化
 
-        }
-    })
+FundotLauncherHelper.register(this, object : FundotLauncherHelper.FundotLauncherCallback{
+     override fun fundotInfoChange(fundotInfoModel: com.fundot.openinfo.FundotOpenModel) {
 
-val sn = FundotOpenInfoHelper.Companion.fundotData.SerialNumber
+    }
+})
 
+```
+**********依赖库中相关功能都需要先完成初始化后再使用**********
+
+//获取sn
+```
+val sn = FundotLauncherHelper.getData().SerialNumber
 ```
 
 加载页面

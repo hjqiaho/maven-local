@@ -16,7 +16,7 @@ repositories {
 
 # 引入
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.9'
+implementation 'com.fundot.local:fundotlauncher:1.0.10'
 ```
 
 
@@ -63,6 +63,16 @@ FundotLauncherHelper.sendLogoutBoardCast(this)
 ***一般可以放在长按清空缓存，或者连续点击三次logo等隐藏操作中***
 ```
 FundotLauncherHelper.sendOpenAdminBoardCast(this)
+```
+
+***打开应用商店页面***
+```
+FundotLauncherHelper.sendOpenAppStoreBoardCast(this)
+```
+
+***检查更新 管控 登录 和桌面***
+```
+FundotLauncherHelper.sendCheckUpdateBoardCast(this)
 ```
 
 # 注意

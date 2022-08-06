@@ -32,7 +32,7 @@ FundotLauncherHelper.register(this, object : FundotLauncherHelper.FundotLauncher
 })
 
 ```
-# 依赖库中相关功能都需要先完成初始化后再使用 
+# 依赖库中相关功能都需要先完成注册出初始化后再使用
 
 ***获取sn***
 ```
@@ -59,7 +59,7 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 FundotLauncherHelper.sendLogoutBoardCast(this)
 ```
 
-***打开管控后台管理员页面 某些情况下或异常的时候需要打开管理员设置页面修改设备设置 掉用此方法打开管理员页面***
+***打开管控后台管理员页面 某些情况下或异常的时候需要打开管理员设置页面修改设备设置 调用此方法打开管理员页面***
 ***一般可以放在长按清空缓存，或者连续点击三次logo等隐藏操作中***
 ```
 FundotLauncherHelper.sendOpenAdminBoardCast(this)

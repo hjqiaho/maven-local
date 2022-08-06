@@ -16,7 +16,7 @@ repositories {
 
 引入   
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.6'
+implementation 'com.fundot.local:fundotlauncher:1.0.7'
 ```
 
 
@@ -51,6 +51,17 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 
     }
 }
+```
+
+退出登录 桌面有退出登录入口的时候 调用此方法退出到登录页面
+```
+FundotLauncherHelper.sendLogoutBoardCast(this)
+```
+
+打开管控后台管理员页面 某些情况下或异常的时候需要打开管理员设置页面修改设备设置 掉用此方法打开管理员页面
+一般可以放在长按清空缓存，或者连续点击三次logo等隐藏操作中
+```
+FundotLauncherHelper.sendLogoutBoardCast(this)
 ```
 
 注意 application可能需要

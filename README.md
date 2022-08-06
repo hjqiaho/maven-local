@@ -1,7 +1,7 @@
 # maven-local
 
-//maven仓库配置如下
-//Users/c30/nee/maven-local 为本地maven仓库地址
+maven仓库配置如下
+/Users/c30/nee/maven-local 为本地maven仓库地址
 ```
 repositories {
     maven { url 'https://maven.aliyun.com/repository/central' }
@@ -14,13 +14,14 @@ repositories {
 ```
 
 
-#引入
+# 引入
 ```
 implementation 'com.fundot.local:fundotlauncher:1.0.7'
 ```
 
 
-#初始化 在Application 的onCreate方法中
+# 初始化
+*******在Application 的onCreate方法中*******
 
 ```
 
@@ -31,7 +32,7 @@ FundotLauncherHelper.register(this, object : FundotLauncherHelper.FundotLauncher
 })
 
 ```
-#**********依赖库中相关功能都需要先完成初始化后再使用**********
+# 依赖库中相关功能都需要先完成初始化后再使用 
 
 ***获取sn***
 ```
@@ -64,7 +65,7 @@ FundotLauncherHelper.sendLogoutBoardCast(this)
 FundotLauncherHelper.sendOpenAdminBoardCast(this)
 ```
 
-#引入
+# 注意
 ***application可能需要***
 ```
 tools:replace="android:allowBackup"

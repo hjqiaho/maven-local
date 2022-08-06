@@ -16,7 +16,7 @@ repositories {
 
 # 引入
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.8'
+implementation 'com.fundot.local:fundotlauncher:1.0.9'
 ```
 
 
@@ -66,11 +66,6 @@ FundotLauncherHelper.sendOpenAdminBoardCast(this)
 ```
 
 # 注意
-***application可能需要***
-```
-tools:replace="android:allowBackup"
-```
-
 ***gradle.properties***
 ```
 org.gradle.jvmargs=-Xmx1536m

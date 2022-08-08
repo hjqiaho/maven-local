@@ -16,7 +16,7 @@ repositories {
 
 # 引入
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.11'
+implementation 'com.fundot.local:fundotlauncher:1.0.12'
 ```
 
 
@@ -26,17 +26,25 @@ implementation 'com.fundot.local:fundotlauncher:1.0.11'
 ```
 
 FundotLauncherHelper.register(this, object : FundotLauncherHelper.FundotLauncherCallback{
-     override fun fundotInfoChange(fundotInfoModel: com.fundot.openinfo.FundotOpenModel) {
+          override fun fundotInfoChange(fundotInfoModel: FundotOpenModel) {
+            //设备信息变化回调 如mac变化 
+          }
+          override fun userInfoChange(userInfoModel: UserInfoModel.UserInfoBean) {
+            //登录用户信息变化回调
+          }
 
-    }
-})
+      })
 
 ```
 # 依赖库中相关功能都需要先完成注册出初始化后再使用
 
 ***获取sn***
 ```
-val sn = FundotLauncherHelper.getData().SerialNumber
+val sn = FundotLauncherHelper.getFundotInfo().SerialNumber
+```
+***获取学段等***
+```
+val phase = FundotLauncherHelper.getUserInfo().phase
 ```
 
 ***加载页面***
@@ -54,6 +62,37 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 }
 ```
 
+***打开应用商店页面***
+```
+FundotLauncherHelper.sendOpenAppStoreBoardCast(this)
+```
+***打开设置页面 家长绑定管控***
+```
+FundotLauncherHelper.sendOpneSettingBoardCast(this)
+```
+
+***获取推荐应用列表***
+```
+FundotLauncherHelper.recommendApps(object :FundotLauncherHelper.FundotAppCallback{
+        override fun getApps(apps: List<FundotAppModel>) {
+
+        }
+    })
+```
+***获取推荐学习应用列表***
+```
+FundotLauncherHelper.recommendStudyApps(object :FundotLauncherHelper.FundotAppCallback{
+    override fun getApps(apps: List<FundotAppModel>) {
+
+    }
+})
+```
+***打开应用***
+```
+FundotLauncherHelper.openApp(FundotAppModel)
+```
+
+
 ***退出登录 桌面有退出登录入口的时候 调用此方法退出到登录页面***
 ```
 FundotLauncherHelper.sendLogoutBoardCast(this)
@@ -65,15 +104,11 @@ FundotLauncherHelper.sendLogoutBoardCast(this)
 FundotLauncherHelper.sendOpenAdminBoardCast(this)
 ```
 
-***打开应用商店页面***
-```
-FundotLauncherHelper.sendOpenAppStoreBoardCast(this)
-```
-
 ***检查更新 管控 登录 和桌面***
 ```
 FundotLauncherHelper.sendCheckUpdateBoardCast(this)
 ```
+
 
 # 注意
 ***gradle.properties***

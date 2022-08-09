@@ -16,7 +16,7 @@ repositories {
 
 # 引入
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.12'
+implementation 'com.fundot.local:fundotlauncher:1.0.13'
 ```
 
 
@@ -27,7 +27,7 @@ implementation 'com.fundot.local:fundotlauncher:1.0.12'
 
 FundotLauncherHelper.register(this, object : FundotLauncherHelper.FundotLauncherCallback{
           override fun fundotInfoChange(fundotInfoModel: FundotOpenModel) {
-            //设备信息变化回调 如mac变化 
+            //设备信息变化回调 如mac变化
           }
           override fun userInfoChange(userInfoModel: UserInfoModel.UserInfoBean) {
             //登录用户信息变化回调

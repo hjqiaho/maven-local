@@ -16,7 +16,7 @@ repositories {
 
 # 引入
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.14'
+implementation 'com.fundot.local:fundotlauncher:1.0.16'
 ```
 
 
@@ -37,6 +37,32 @@ FundotLauncherHelper.register(this, object : FundotLauncherHelper.FundotLauncher
 
 ```
 # 依赖库中相关功能都需要先完成注册出初始化后再使用
+
+***监听隐藏应用事件***
+```
+FundotLauncherHelper.setAppHiddenListener(object:FundotLauncherHelper.FundotAppHiddenCallback{
+  //这里需要显示或者隐藏图标的时候调用。 此时图标需要自己处理，查询所有图标减去此处需要隐藏的图标  
+  //hideApps 为系统中所有需要隐藏的图标
+  //TODO 这个方法和下面两个方法任选一个处理
+  override fun needReloadApp(hideApps: List<String>) {
+      Log.i("needReloadApp", "hideApps = ${hideApps.toString()}")
+  }
+
+  //这里需要隐藏图标的时候调用
+  //packageNames为新增需要隐藏的一个或多个图标
+  //TODO 这个方法和第一个方法任选一个处理
+  override fun needHiddenApp(packageNames: List<String>) {
+      Log.i("needHiddenApp", "packageNames = ${packageNames.toString()}")
+  }
+
+  //这里需要显示图标的时候调用
+  //packageNames为新增需要显示的一个或多个图标
+  //TODO 这个方法和第一个方法任选一个处理
+  override fun needShowApp(packageNames: List<String>) {
+      Log.i("needShowApp", "packageNames = ${packageNames.toString()}")
+  }
+})
+```
 
 ***获取sn***
 ```

@@ -16,7 +16,7 @@ repositories {
 
 # 引入
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.18'
+implementation 'com.fundot.local:fundotlauncher:1.0.19'
 ```
 
 
@@ -37,7 +37,11 @@ FundotLauncherHelper.register(this, object : FundotLauncherHelper.FundotLauncher
 
 ```
 # 依赖库中相关功能都需要先完成注册出初始化后再使用
-
+***年级切换的时候 调用刷新数据方法***
+```
+//grade：0、1、2、3、4、5、6、7、8、9、10、11、12
+FundotLauncherHelper.gradeChange(9)
+```
 ***监听隐藏应用事件***
 ```
 FundotLauncherHelper.setAppHiddenListener(object:FundotLauncherHelper.FundotAppHiddenCallback{

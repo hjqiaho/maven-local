@@ -100,15 +100,6 @@ FundotLauncherHelper.sendOpenAppStoreBoardCast(this)
 ```
 FundotLauncherHelper.sendOpneSettingBoardCast(this)
 ```
-
-***获取推荐应用列表***
-```
-FundotLauncherHelper.recommendApps(object :FundotLauncherHelper.FundotAppCallback{
-        override fun getApps(apps: List<FundotAppModel>) {
-
-        }
-    })
-```
 ***获取推荐学习应用列表***
 ```
 FundotLauncherHelper.recommendStudyApps(object :FundotLauncherHelper.FundotAppCallback{

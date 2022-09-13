@@ -16,7 +16,7 @@ repositories {
 
 # 引入
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.21'
+implementation 'com.fundot.local:fundotlauncher:1.0.23'
 ```
 
 

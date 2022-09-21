@@ -16,7 +16,7 @@ repositories {
 
 # 引入
 ```
-implementation 'com.fundot.local:fundotlauncher:1.0.24'
+implementation 'com.fundot.local:fundotlauncher:1.0.26'
 ```
 
 
@@ -99,6 +99,10 @@ FundotLauncherHelper.sendOpenAppStoreBoardCast(this)
 ***打开设置页面 家长绑定管控***
 ```
 FundotLauncherHelper.sendOpneSettingBoardCast(this)
+```
+***打开精品课程***
+```
+FundotLauncherHelper.openFdExcellentCourses()
 ```
 ***获取推荐学习应用列表***
 ```
